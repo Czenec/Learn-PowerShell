@@ -167,3 +167,118 @@ New-ADUser -AccountPassword (convertto-securestring $AccountPassword -AsPlainTex
 
 
 Add-ADGroupMember -Identity "Utviklere" -Members "Aron Pace","Nora Odling","Zeeshan Maldonado"
+
+#-------------------test------------------------
+
+# ---Felles---
+
+$AccountPassword = "Qwerty123"
+$Name = "$GivenName $Surname"
+
+# ---Ledergruppa---
+
+$Path = "OU=Ledergruppa,OU=Fram IT,OU=Brukere,DC=PowerShell-practice,DC=lan"
+
+# - Brukere -
+
+$GivenName = "Cain"
+$Surname = "Roth"
+
+
+New-ADUser -AccountPassword (convertto-securestring $AccountPassword -AsPlainText -force)`
+-DisplayName $Name -Enabled 1 -GivenName $GivenName -Name $Name -ChangePasswordAtLogon 1 -Path $Path -UserPrincipalName $Name -Surname $Surname
+
+
+
+$GivenName = "Randy"
+$Surname = "Carpenter"
+
+New-ADUser -AccountPassword (convertto-securestring $AccountPassword -AsPlainText -force)`
+-DisplayName $Name -Enabled 1 -GivenName $GivenName -Name $Name -ChangePasswordAtLogon 1 -Path $Path -UserPrincipalName $Name -Surname $Surname
+
+
+
+$GivenName = "Colin"
+$Surname = "Norton"
+
+New-ADUser -AccountPassword (convertto-securestring $AccountPassword -AsPlainText -force)`
+-DisplayName $Name -Enabled 1 -GivenName $GivenName -Name $Name -ChangePasswordAtLogon 1 -Path $Path -UserPrincipalName $Name -Surname $Surname
+
+
+Add-ADGroupMember -Identity "Ledergruppa" -Members "Cain Roth","Randy Carpenter","Colin Norton"
+
+
+# ---Salgsavdelingen---
+
+$AccountPassword = "Qwerty123"
+$Path = "OU=Salgsavdelingen,OU=Fram IT,OU=Brukere,DC=PowerShell-practice,DC=lan"
+
+# - Brukere -
+
+
+$GivenName = "Jessica"
+$Surname = "Hancock"
+
+New-ADUser -AccountPassword (convertto-securestring $AccountPassword -AsPlainText -force)`
+-DisplayName $Name -Enabled 1 -GivenName $GivenName -Name $Name -ChangePasswordAtLogon 1 -Path $Path -UserPrincipalName $Name -Surname $Surname
+
+
+
+$GivenName = "Honor"
+$Surname = "Manning"
+
+New-ADUser -AccountPassword (convertto-securestring $AccountPassword -AsPlainText -force)`
+-DisplayName $Name -Enabled 1 -GivenName $GivenName -Name $Name -ChangePasswordAtLogon 1 -Path $Path -UserPrincipalName $Name -Surname $Surname
+
+
+
+$GivenName = "Anoushka"
+$Surname = "Anthony"
+
+New-ADUser -AccountPassword (convertto-securestring $AccountPassword -AsPlainText -force)`
+-DisplayName $Name -Enabled 1 -GivenName $GivenName -Name $Name -ChangePasswordAtLogon 1 -Path $Path -UserPrincipalName $Name -Surname $Surname
+
+
+
+$GivenName = "Fay"
+$Surname = "Dyer"
+
+New-ADUser -AccountPassword (convertto-securestring $AccountPassword -AsPlainText -force)`
+-DisplayName $Name -Enabled 1 -GivenName $GivenName -Name $Name -ChangePasswordAtLogon 1 -Path $Path -UserPrincipalName $Name -Surname $Surname
+
+
+Add-ADGroupMember -Identity "Salgsavdelingen" -Members "Jessica Hancock","Honor Manning","Anoushka Anthony","Fay Dyer"
+
+
+# ---Utviklere---
+
+$AccountPassword = "Qwerty123"
+$Path = "OU=Utviklere,OU=Fram IT,OU=Brukere,DC=PowerShell-practice,DC=lan"
+
+# - Brukere -
+
+
+$GivenName = "Aron"
+$Surname = "Pace"
+
+New-ADUser -AccountPassword (convertto-securestring $AccountPassword -AsPlainText -force)`
+-DisplayName $Name -Enabled 1 -GivenName $GivenName -Name $Name -ChangePasswordAtLogon 1 -Path $Path -UserPrincipalName $Name -Surname $Surname
+
+
+
+$GivenName = "Nora"
+$Surname = "Odling"
+
+New-ADUser -AccountPassword (convertto-securestring $AccountPassword -AsPlainText -force)`
+-DisplayName $Name -Enabled 1 -GivenName $GivenName -Name $Name -ChangePasswordAtLogon 1 -Path $Path -UserPrincipalName $Name -Surname $Surname
+
+
+
+$GivenName = "Zeeshan"
+$Surname = "Maldonado"
+
+New-ADUser -AccountPassword (convertto-securestring $AccountPassword -AsPlainText -force)`
+-DisplayName $Name -Enabled 1 -GivenName $GivenName -Name $Name -ChangePasswordAtLogon 1 -Path $Path -UserPrincipalName $Name -Surname $Surname
+
+
+Add-ADGroupMember -Identity "Utviklere" -Members "Aron Pace","Nora Odling","Zeeshan Maldonado"
